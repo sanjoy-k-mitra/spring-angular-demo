@@ -4,22 +4,24 @@
     <title>Hello Angular JS</title>
     <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <style type="text/css">
-        [ng\:cloak], [ng-cloak], .ng-cloak{
+        [ng\:cloak], [ng-cloak], .ng-cloak {
             display: none !important;
         }
     </style>
 </head>
-<body ng-app="hello">
-    <div class="container">
-        <h1>Greeting</h1>
-        <div ng-controller="home" ng-cloak class="ng-cloak">
-            <p>The id is {{greeting.id}}</p>
-            <p>The content is {{greeting.content}}</p>
-        </div>
-    </div>
+<body ng-app="hello" ng-cloak class="ng-cloak">
+<div ng-controller="navigation" class="container">
+    <ul class="nav nav-pills" role="tablist">
+        <li class="active"><a href="#/">home</a></li>
+        <li ng-hide="authenticated"><a href="#/login">login</a></li>
+        <li ng-show="authenticated"><a href="" ng-click="logout()">logout</a></li>
+    </ul>
+</div>
+<div ng-view class="container"></div>
 
 <script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="lib/angular/angular.min.js"></script>
+<script type="text/javascript" src="lib/angular-route/angular-route.min.js"></script>
 <script type="text/javascript" src="lib/angular-bootstrap/ui-bootstrap.min.js"></script>
 <script type="text/javascript" src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/hello.js"></script>
